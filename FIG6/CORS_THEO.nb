@@ -1,0 +1,649 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     25170,        640]
+NotebookOptionsPosition[     24308,        611]
+NotebookOutlinePosition[     24651,        626]
+CellTagsIndexPosition[     24608,        623]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PBdB", "     ", "=", "15"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Muy", "       ", "=", "0.25"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"MM", "          ", "=", "5"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"NN", "          ", "=", "2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"KK", "          ", "=", "2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"xR", "          ", "=", "0.6"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"xB", "          ", "=", "0.5"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yB", "          ", "=", "0.5"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"xP", "          ", "=", "0.5"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yP", "          ", "=", 
+   RowBox[{"-", "0.5"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Eta", "        ", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"AP", "          ", "=", "0.1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"PL", "          ", "=", "3"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Cth", "       ", "=", "0.7"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"tSS", "        ", "=", " ", "0.55"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tSP", "        ", "=", " ", 
+   RowBox[{"tSS", "/", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PP", "          ", "=", 
+   RowBox[{"10", "^", 
+    RowBox[{"(", 
+     RowBox[{"PBdB", "/", "10"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"kap", "        ", "=", 
+   RowBox[{"2", "*", "Eta", "*", 
+    RowBox[{"AP", "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", "AP"}], ")"}]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"LSR", "        ", "=", 
+   RowBox[{"xR", "^", "PL"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"LRD", "        ", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", "xR"}], ")"}], "^", "PL"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"LBS", "        ", "=", 
+   RowBox[{
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{"xB", "^", "2"}], "+", 
+      RowBox[{"yB", "^", "2"}]}], "]"}], "^", "PL"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"LBR", "        ", "=", 
+   RowBox[{
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"xR", "-", "xB"}], ")"}], "^", "2"}], "+", 
+      RowBox[{"yB", "^", "2"}]}], "]"}], "^", "PL"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"LSP", "        ", "=", 
+   RowBox[{
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{"xP", "^", "2"}], "+", 
+      RowBox[{"yP", "^", "2"}]}], "]"}], "^", "PL"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"LRP", "        ", "=", 
+   RowBox[{
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"xR", "-", "xP"}], ")"}], "^", "2"}], "+", 
+      RowBox[{"yP", "^", "2"}]}], "]"}], "^", "PL"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Theta", "   ", "=", 
+   RowBox[{
+    RowBox[{"2", "^", 
+     RowBox[{"(", 
+      RowBox[{"2", "*", 
+       RowBox[{"Cth", "/", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", "AP"}], ")"}]}]}], ")"}]}], "-", "1"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Rho", "        ", "=", 
+   RowBox[{"Theta", "/", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"tSS", "*", "Theta"}]}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Sig", "        ", "=", 
+   RowBox[{"Muy", "/", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", "tSP"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"OM", "           ", "=", 
+   RowBox[{"LSR", "+", "LRD"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GG1", "        ", "=", "0"}], ";"}], "\n", 
+ RowBox[{"For", " ", "[", 
+  RowBox[{
+   RowBox[{"mmm", " ", "=", " ", "0"}], ",", " ", 
+   RowBox[{"mmm", " ", "<", " ", "MM"}], ",", " ", 
+   RowBox[{"mmm", "++"}], ",", " ", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"GG1", " ", "=", " ", 
+     RowBox[{"GG1", " ", "+", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], "^", "mmm"}], "*", 
+       RowBox[{"Binomial", "[", 
+        RowBox[{
+         RowBox[{"MM", "-", "1"}], ",", "mmm"}], "]"}], "*", "MM", " ", "*", 
+       " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"LRD", "/", 
+           RowBox[{"(", 
+            RowBox[{"LRD", "+", 
+             RowBox[{"mmm", "*", "OM"}]}], ")"}]}], "*", 
+          RowBox[{"Exp", "[", 
+           RowBox[{
+            RowBox[{"-", "LSR"}], "*", 
+            RowBox[{
+             RowBox[{"Rho", "/", "PP"}], "/", "zz1"}]}], "]"}], "*", 
+          RowBox[{"Exp", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{"LRD", "+", 
+               RowBox[{"mmm", "*", "OM"}]}], ")"}]}], "*", 
+            RowBox[{
+             RowBox[{"Rho", "/", "PP"}], "/", "zz2"}]}], "]"}]}], " ", "+", 
+         " ", 
+         RowBox[{
+          RowBox[{"mmm", "/", 
+           RowBox[{"(", 
+            RowBox[{"mmm", "+", "1"}], ")"}]}], "*", 
+          RowBox[{"LSR", "/", 
+           RowBox[{"(", 
+            RowBox[{"LRD", "+", 
+             RowBox[{"mmm", "*", "OM"}]}], ")"}]}], "*", 
+          RowBox[{"Exp", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{"mmm", "+", "1"}], ")"}]}], "*", "OM", "*", 
+            RowBox[{
+             RowBox[{"Rho", "/", "PP"}], "/", "zz1"}]}], "]"}]}]}], 
+        ")"}]}]}]}], ";"}]}], "\[IndentingNewLine]", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GG2", "        ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", " ", "[", 
+  RowBox[{
+   RowBox[{"mmm", " ", "=", " ", "0"}], ",", " ", 
+   RowBox[{"mmm", " ", "<", " ", "MM"}], ",", " ", 
+   RowBox[{"mmm", "++"}], ",", " ", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"GG2", " ", "=", " ", 
+     RowBox[{"GG2", " ", "+", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], "^", "mmm"}], "*", 
+       RowBox[{"Binomial", "[", 
+        RowBox[{
+         RowBox[{"MM", "-", "1"}], ",", "mmm"}], "]"}], "*", "MM", " ", "*", 
+       " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"LSR", "/", 
+           RowBox[{"(", 
+            RowBox[{"LSR", "+", 
+             RowBox[{"mmm", "*", "OM"}]}], ")"}]}], "*", 
+          RowBox[{"Exp", "[", 
+           RowBox[{
+            RowBox[{"-", "LRD"}], "*", 
+            RowBox[{
+             RowBox[{"Rho", "/", "PP"}], "/", "zz2"}]}], "]"}], "*", 
+          RowBox[{"Exp", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{"LSR", "+", 
+               RowBox[{"mmm", "*", "OM"}]}], ")"}]}], "*", 
+            RowBox[{
+             RowBox[{"Rho", "/", "PP"}], "/", "zz1"}]}], "]"}]}], " ", "+", 
+         " ", 
+         RowBox[{
+          RowBox[{"mmm", "/", 
+           RowBox[{"(", 
+            RowBox[{"mmm", "+", "1"}], ")"}]}], "*", 
+          RowBox[{"LRD", "/", 
+           RowBox[{"(", 
+            RowBox[{"LSR", "+", 
+             RowBox[{"mmm", "*", "OM"}]}], ")"}]}], "*", 
+          RowBox[{"Exp", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{"mmm", "+", "1"}], ")"}]}], "*", "OM", "*", 
+            RowBox[{
+             RowBox[{"Rho", "/", "PP"}], "/", "zz2"}]}], "]"}]}]}], 
+        ")"}]}]}]}], ";"}]}], "\[IndentingNewLine]", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ffZ1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", " ", "[", " ", 
+   RowBox[{
+    RowBox[{"ttt", " ", "=", " ", "0"}], ",", " ", 
+    RowBox[{"ttt", " ", "<", " ", "KK"}], ",", " ", 
+    RowBox[{"ttt", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"For", " ", "[", 
+     RowBox[{
+      RowBox[{"nnn", " ", "=", " ", "0"}], ",", " ", 
+      RowBox[{"nnn", "<", 
+       RowBox[{"NN", "+", "1"}]}], ",", " ", 
+      RowBox[{"nnn", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"ffZ1", " ", "=", " ", 
+        RowBox[{"ffZ1", "  ", "+", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"-", "1"}], ")"}], "^", "nnn"}], "*", 
+          RowBox[{
+           RowBox[{"Binomial", "[", 
+            RowBox[{"NN", ",", "nnn"}], "]"}], "/", 
+           RowBox[{"Factorial", "[", "ttt", "]"}]}], "*", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"LBS", "/", "kap"}], ")"}], "^", "ttt"}], "*", 
+          "\[IndentingNewLine]", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"LBS", "/", "kap"}], "*", 
+             RowBox[{"zz1", "^", "ttt"}]}], "-", 
+            RowBox[{"nnn", "*", "LSP", "*", "Sig", "*", 
+             RowBox[{"zz1", "^", 
+              RowBox[{"(", 
+               RowBox[{"ttt", "-", "2"}], ")"}]}]}], "-", 
+            RowBox[{"ttt", "*", 
+             RowBox[{"zz1", "^", 
+              RowBox[{"(", 
+               RowBox[{"ttt", "-", "1"}], ")"}]}]}]}], ")"}], "*", 
+          RowBox[{"Exp", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "LBS"}], "/", "kap"}], "*", "zz1"}], "-", 
+            RowBox[{"nnn", "*", "LSP", "*", 
+             RowBox[{"Sig", "/", "zz1"}]}]}], "]"}]}]}]}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ffZ2", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", " ", "[", " ", 
+   RowBox[{
+    RowBox[{"ttt", " ", "=", " ", "0"}], ",", " ", 
+    RowBox[{"ttt", " ", "<", " ", "KK"}], ",", " ", 
+    RowBox[{"ttt", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"For", " ", "[", 
+     RowBox[{
+      RowBox[{"nnn", " ", "=", " ", "0"}], ",", " ", 
+      RowBox[{"nnn", "<", 
+       RowBox[{"NN", "+", "1"}]}], ",", " ", 
+      RowBox[{"nnn", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"ffZ2", " ", "=", " ", 
+        RowBox[{"ffZ2", " ", "+", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"-", "1"}], ")"}], "^", "nnn"}], "*", 
+          RowBox[{
+           RowBox[{"Binomial", "[", 
+            RowBox[{"NN", ",", "nnn"}], "]"}], "/", 
+           RowBox[{"Factorial", "[", "ttt", "]"}]}], "*", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"LBR", "/", "kap"}], ")"}], "^", "ttt"}], "*", 
+          "\[IndentingNewLine]", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"LBR", "/", "kap"}], "*", 
+             RowBox[{"zz2", "^", "ttt"}]}], "-", 
+            RowBox[{"nnn", "*", "LRP", "*", "Sig", "*", 
+             RowBox[{"zz2", "^", 
+              RowBox[{"(", 
+               RowBox[{"ttt", "-", "2"}], ")"}]}]}], "-", 
+            RowBox[{"ttt", "*", 
+             RowBox[{"zz2", "^", 
+              RowBox[{"(", 
+               RowBox[{"ttt", "-", "1"}], ")"}]}]}]}], ")"}], "*", 
+          RowBox[{"Exp", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "LBR"}], "/", "kap"}], "*", "zz2"}], "-", 
+            RowBox[{"nnn", "*", "LRP", "*", 
+             RowBox[{"Sig", "/", "zz2"}]}]}], "]"}]}]}]}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ham1", "    ", "=", " ", 
+   RowBox[{"GG1", "*", "ffZ1", "*", "ffZ2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ham2", "    ", "=", " ", 
+   RowBox[{"GG2", "*", "ffZ1", "*", "ffZ2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GTRI1", " ", "=", " ", 
+   RowBox[{"NIntegrate", "[", 
+    RowBox[{"Ham1", ",", 
+     RowBox[{"{", 
+      RowBox[{"zz2", ",", " ", "0", ",", "  ", "Infinity"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"zz1", ",", "0", ",", "zz2"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"GTRI2", " ", "=", " ", 
+    RowBox[{"NIntegrate", "[", 
+     RowBox[{"Ham2", ",", 
+      RowBox[{"{", 
+       RowBox[{"zz1", ",", " ", "0", ",", "  ", "Infinity"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"zz2", ",", "0", ",", "zz1"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"OP", "          ", "=", " ", 
+  RowBox[{"1", " ", "-", " ", "GTRI1", " ", "-", " ", "GTRI2"}]}]}], "Input",
+ CellChangeTimes->{{3.730681317890625*^9, 3.7306815575625*^9}, {
+   3.730681634203125*^9, 3.730681662125*^9}, {3.730685515109375*^9, 
+   3.7306856704375*^9}, {3.7306857025625*^9, 3.7306857113125*^9}, {
+   3.7306857669375*^9, 3.73068581615625*^9}, {3.730685951609375*^9, 
+   3.730686018984375*^9}, {3.73068616478125*^9, 3.730686166015625*^9}, {
+   3.730686277328125*^9, 3.730686280421875*^9}, {3.73068634134375*^9, 
+   3.730686378875*^9}, {3.730686599359375*^9, 3.7306866346875*^9}, {
+   3.73068671890625*^9, 3.73068673196875*^9}, {3.73068679803125*^9, 
+   3.730686827453125*^9}, 3.730686944296875*^9, {3.730687028609375*^9, 
+   3.73068705465625*^9}, {3.730687159015625*^9, 3.7306871690625*^9}, {
+   3.730687278875*^9, 3.73068731284375*^9}, {3.7306874089375*^9, 
+   3.7306874865625*^9}, {3.730687623*^9, 3.73068773725*^9}, {
+   3.730687896890625*^9, 3.73068802628125*^9}, {3.73068830225*^9, 
+   3.730688316046875*^9}, {3.730688346984375*^9, 3.73068841*^9}, {
+   3.730688536390625*^9, 3.73068855375*^9}, {3.730688608578125*^9, 
+   3.7306886815625*^9}, {3.730688886859375*^9, 3.7306889808125*^9}, {
+   3.73381521828125*^9, 3.73381525090625*^9}, {3.73381542396875*^9, 
+   3.733815614984375*^9}, {3.7338156804375*^9, 3.73381573875*^9}, {
+   3.733815905390625*^9, 3.733815943375*^9}, {3.73381598165625*^9, 
+   3.733816008484375*^9}, {3.7338160873125*^9, 3.73381614603125*^9}, {
+   3.7338166015625*^9, 3.73381669653125*^9}, {3.733816773*^9, 
+   3.733816800140625*^9}, {3.73482756375*^9, 3.7348276470625*^9}, {
+   3.73482767809375*^9, 3.734827807578125*^9}, {3.734827857296875*^9, 
+   3.73482791934375*^9}, {3.734828017546875*^9, 3.734828018515625*^9}, {
+   3.7348280948125*^9, 3.734828314109375*^9}, {3.734828740921875*^9, 
+   3.734828890796875*^9}, {3.73482897603125*^9, 3.734829012625*^9}, {
+   3.734829054828125*^9, 3.734829191015625*^9}, {3.7348322109375*^9, 
+   3.734832219765625*^9}, {3.73483226696875*^9, 3.734832327671875*^9}, {
+   3.7348324845625*^9, 3.7348324865625*^9}, 3.73483848590625*^9, {
+   3.734838527828125*^9, 3.7348385761875*^9}, {3.7348386890625*^9, 
+   3.7348388594375*^9}, {3.734839717859375*^9, 3.734839718078125*^9}, {
+   3.73483983859375*^9, 3.734839839203125*^9}, {3.734839890171875*^9, 
+   3.73484010925*^9}, {3.734840220078125*^9, 3.734840220421875*^9}, {
+   3.73484220003125*^9, 3.73484220025*^9}, {3.73484228978125*^9, 
+   3.734842441296875*^9}, {3.734842563703125*^9, 3.734842603796875*^9}, {
+   3.734847338828125*^9, 3.7348473935*^9}, {3.73484746415625*^9, 
+   3.734847464328125*^9}, {3.734847509953125*^9, 3.7348476550625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "errprec"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Catastrophic loss of precision in the global error \
+estimate due to insufficient WorkingPrecision or divergent integral. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NIntegrate\\\", ButtonNote -> \
+\\\"NIntegrate::errprec\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.73484761753125*^9, 3.73484765771875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "errprec"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Catastrophic loss of precision in the global error \
+estimate due to insufficient WorkingPrecision or divergent integral. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NIntegrate\\\", ButtonNote -> \
+\\\"NIntegrate::errprec\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.73484761753125*^9, 3.734847657890625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "errprec"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Catastrophic loss of precision in the global error \
+estimate due to insufficient WorkingPrecision or divergent integral. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NIntegrate\\\", ButtonNote -> \
+\\\"NIntegrate::errprec\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.73484761753125*^9, 3.7348476580625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "errprec"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Catastrophic loss of precision in the global error \
+estimate due to insufficient WorkingPrecision or divergent integral. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NIntegrate\\\", ButtonNote -> \
+\\\"NIntegrate::errprec\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.73484761753125*^9, 3.734847658234375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "errprec"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Catastrophic loss of precision in the global error \
+estimate due to insufficient WorkingPrecision or divergent integral. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NIntegrate\\\", ButtonNote -> \
+\\\"NIntegrate::errprec\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.73484761753125*^9, 3.734847658421875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "errprec"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Catastrophic loss of precision in the global error \
+estimate due to insufficient WorkingPrecision or divergent integral. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NIntegrate\\\", ButtonNote -> \
+\\\"NIntegrate::errprec\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.73484761753125*^9, 3.73484765859375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "errprec"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Catastrophic loss of precision in the global error \
+estimate due to insufficient WorkingPrecision or divergent integral. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NIntegrate\\\", ButtonNote -> \
+\\\"NIntegrate::errprec\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.73484761753125*^9, 3.734847658765625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[\\(NIntegrate :: errprec\\), \\\"MessageName\\\"]\
+\\)\[NoBreak] will be suppressed during this calculation. \\!\\(\\*ButtonBox[\
+\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.73484761753125*^9, 3.73484765884375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1", "-", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{"Ham1", ",", 
+    RowBox[{"{", 
+     RowBox[{"zz2", ",", "0", ",", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"zz1", ",", "0", ",", "zz2"}], "}"}]}], "]"}], "-", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{"Ham2", ",", 
+    RowBox[{"{", 
+     RowBox[{"zz1", ",", "0", ",", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"zz2", ",", "0", ",", "zz1"}], "}"}]}], "]"}]}]], "Output",
+ CellChangeTimes->{{3.730688321671875*^9, 3.73068841253125*^9}, {
+   3.730688542453125*^9, 3.73068855853125*^9}, {3.730688611921875*^9, 
+   3.7306886845*^9}, {3.73068889221875*^9, 3.7306889836875*^9}, 
+   3.733815597203125*^9, {3.73381567009375*^9, 3.7338157420625*^9}, {
+   3.73381591515625*^9, 3.7338159476875*^9}, {3.733815986328125*^9, 
+   3.7338160114375*^9}, {3.733816091140625*^9, 3.733816149125*^9}, {
+   3.733816618296875*^9, 3.73381669915625*^9}, {3.733816776890625*^9, 
+   3.733816802875*^9}, {3.734827661734375*^9, 3.734827810375*^9}, {
+   3.734827845890625*^9, 3.734827922359375*^9}, {3.734828100015625*^9, 
+   3.734828317046875*^9}, {3.73482874490625*^9, 3.73482889353125*^9}, {
+   3.73482898296875*^9, 3.734828996609375*^9}, {3.73482904734375*^9, 
+   3.7348291936875*^9}, {3.734832292015625*^9, 3.73483233084375*^9}, 
+   3.734838489984375*^9, {3.73483853178125*^9, 3.734838579609375*^9}, {
+   3.73483869228125*^9, 3.73483886275*^9}, 3.734839843*^9, {
+   3.734839893109375*^9, 3.734840112296875*^9}, 3.734842203046875*^9, {
+   3.7348422926875*^9, 3.73484244378125*^9}, {3.734842566375*^9, 
+   3.734842607046875*^9}, {3.734847497515625*^9, 3.734847659*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "slwcon"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Numerical integration converging too slowly; suspect one \
+of the following: singularity, value of the integration is 0, highly \
+oscillatory integrand, or WorkingPrecision too small. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/slwcon\\\", ButtonNote -> \
+\\\"NIntegrate::slwcon\\\"]\\)\"\>"}]], "Message", "MSG",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.730687711546875*^9, 3.730687741703125*^9, 3.7306879083125*^9, 
+   3.730688011453125*^9, 3.730688209671875*^9, {3.730688305484375*^9, 
+   3.730688329421875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "slwcon"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Numerical integration converging too slowly; suspect one \
+of the following: singularity, value of the integration is 0, highly \
+oscillatory integrand, or WorkingPrecision too small. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/slwcon\\\", ButtonNote -> \
+\\\"NIntegrate::slwcon\\\"]\\)\"\>"}]], "Message", "MSG",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.730687711546875*^9, 3.730687741703125*^9, 3.7306879083125*^9, 
+   3.730688011453125*^9, 3.730688209671875*^9, {3.730688305484375*^9, 
+   3.7306883215*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "slwcon"}], "MessageName"], ":", 
+  " ", "\<\"Numerical integration converging too slowly; suspect one of the \
+following: singularity, value of the integration is 0, highly oscillatory \
+integrand, or WorkingPrecision too small. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/slwcon\\\", ButtonNote -> \
+\\\"NIntegrate::slwcon\\\"]\\)\"\>"}]], "Message", "MSG",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{3.730687711546875*^9, 3.730687741703125*^9, 
+  3.7306879083125*^9, 3.730688011453125*^9, 3.730688209671875*^9, 
+  3.730688305484375*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "slwcon"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Numerical integration converging too slowly; suspect one \
+of the following: singularity, value of the integration is 0, highly \
+oscillatory integrand, or WorkingPrecision too small. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/slwcon\\\", ButtonNote -> \
+\\\"NIntegrate::slwcon\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.730687711546875*^9, 3.730687741703125*^9, 
+  3.7306879083125*^9, 3.730688011453125*^9, 3.7306882098125*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.73068833046875*^9, 3.7306883305*^9}}]
+},
+WindowSize->{1016, 651},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 14763, 388, 1292, "Input"],
+Cell[15345, 412, 525, 10, 21, "Message"],
+Cell[15873, 424, 526, 10, 21, "Message"],
+Cell[16402, 436, 524, 10, 21, "Message"],
+Cell[16929, 448, 526, 10, 21, "Message"],
+Cell[17458, 460, 526, 10, 21, "Message"],
+Cell[17987, 472, 525, 10, 21, "Message"],
+Cell[18515, 484, 526, 10, 21, "Message"],
+Cell[19044, 496, 558, 11, 21, "Message"],
+Cell[19605, 509, 1655, 30, 31, "Output"],
+Cell[21263, 541, 771, 16, 39, "Message"],
+Cell[22037, 559, 766, 16, 39, "Message"],
+Cell[22806, 577, 729, 14, 39, "Message"],
+Cell[23538, 593, 665, 12, 39, "Message"]
+}, Open  ]],
+Cell[24218, 608, 86, 1, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
